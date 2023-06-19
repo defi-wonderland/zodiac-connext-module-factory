@@ -48,6 +48,9 @@ interface IConnextModuleFactory is IXReceiver {
 
   /**
    * @notice Creates a Connext module
+   * @param _moduleData The ModuleData, required to deploy the module
+   * @param _safe The GnosisSafe to deploy the module
+   *
    * @return _connextModule The Connext module created
    */
   function createModule(
@@ -58,7 +61,7 @@ interface IConnextModuleFactory is IXReceiver {
   /**
    * @dev Receives xCalls from Connext to create the factory and module.
    * @param _callData Encoded SafeData, ModuleData, bytes
-   * @return _returnData Returns the transaction return data the call was successful.
+   * @return _returnData Returns the transaction return data of the executed transaction.
    */
   function xReceive(
     bytes32,

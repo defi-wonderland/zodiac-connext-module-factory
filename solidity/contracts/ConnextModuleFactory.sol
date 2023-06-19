@@ -58,6 +58,12 @@ contract ConnextModuleFactory is IConnextModuleFactory {
 
   /**
    * @notice Creates a GnosisSafe, deploys a module, and then enables the module for the safe
+   * @param _safeData The SafeData, required to create the safe
+   * @param _moduleData The ModuleData, required to deploy the module
+   * @param _safeTransactionData The Safe transaction data to execute after module deployment
+   * @return _connextModule Returns the Connext module created
+   * @return _safe Returns the GnosisSafe created
+   * @return _returnData Returns the transaction return data of the executed transaction.
    */
   function _createSafeAndModule(
     SafeData memory _safeData,
@@ -118,6 +124,7 @@ contract ConnextModuleFactory is IConnextModuleFactory {
 
   /**
    * @notice Reverts if not called from the GnosisSafe on safe creation
+   * @param _connextModule The connext module address to enable
    */
   function enableModuleFromFactory(address _connextModule) external {
     GnosisSafe(payable(address(this))).enableModule(_connextModule);
