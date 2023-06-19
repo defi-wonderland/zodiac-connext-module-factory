@@ -2,10 +2,14 @@
 yarn-error.log
 node_modules
 .DS_STORE
+.vbproj
+.vb
+coverage
 
 # Foundry files
 cache
 out-via-ir
+bin
 
 # Config files
 .env
@@ -19,4 +23,3 @@ out/*/*
 
 # Keep the latest deployment only
 broadcast/*/*/*
-!broadcast/*/*/run-latest.json
