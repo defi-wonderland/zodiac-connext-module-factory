@@ -8,7 +8,8 @@ number_underscore = 'thousands'
 multiline_func_header = 'params_first'
 
 [profile.default]
-solc = '0.8.14'
+solc = '0.8.19'
+evm_version = 'paris'   
 src = 'solidity'
 test = 'solidity/test'
 out = 'out'
@@ -29,4 +30,4 @@ src = 'solidity/test'
 
 [rpc_endpoints]
 mainnet = "${MAINNET_RPC}"
-rinkeby = "${RINKEBY_RPC}"
+goerli = "${GOERLI_RPC}"

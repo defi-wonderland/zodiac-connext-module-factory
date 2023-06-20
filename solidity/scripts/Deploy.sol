@@ -2,29 +2,29 @@
 pragma solidity >=0.8.4 <0.9.0;
 
 import {Script} from 'forge-std/Script.sol';
-import {Greeter} from 'contracts/Greeter.sol';
-import {IERC20} from 'isolmate/interfaces/tokens/IERC20.sol';
+
+import {ConnextModuleFactory} from 'contracts/ConnextModuleFactory.sol';
 
 abstract contract Deploy is Script {
-  function _deploy(string memory greeting, IERC20 token) internal {
+  function _deploy(address _safeFactory) internal {
     vm.startBroadcast();
-    new Greeter(greeting, token);
+    new ConnextModuleFactory(_safeFactory);
     vm.stopBroadcast();
   }
 }
 
-contract DeployMainnet is Deploy {
-  function run() external {
-    IERC20 weth = IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2);
+contract DeployGoerli is Deploy {
+  address constant _GOERLI_SAFE_FACTORY = 0xa6B71E26C5e0845f74c812102Ca7114b6a896AB2;
 
-    _deploy('some real greeting', weth);
+  function run() external {
+    _deploy(_GOERLI_SAFE_FACTORY);
   }
 }
 
-contract DeployRinkeby is Deploy {
-  function run() external {
-    IERC20 weth = IERC20(0xDf032Bc4B9dC2782Bb09352007D4C57B75160B15);
+contract DeployOptimism is Deploy {
+  address constant _OPTIMISM_SAFE_FACTORY = 0xC22834581EbC8527d974F8a1c97E1bEA4EF910BC;
 
-    _deploy('some test greeting', weth);
+  function run() external {
+    _deploy(_OPTIMISM_SAFE_FACTORY);
   }
 }
