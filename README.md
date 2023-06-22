@@ -1,32 +1,19 @@
-<img src="https://raw.githubusercontent.com/defi-wonderland/brand/v1.0.0/external/solidity-foundry-boilerplate-banner.png" alt="wonderland banner" align="center" />
-<br />
+# Connext Module Factory
 
-<div align="center"><strong>Start your next Solidity project with Foundry in seconds</strong></div>
-<div align="center">A highly scalable foundation focused on DX and best practices</div>
+The `ConnextModuleFactory` is designed to streamline the process of creating a [GnosisSafe 1.3.0](https://github.com/safe-global/safe-contracts/tree/v1.3.0) contract, deploying a [ConnextModule](https://github.com/gnosis/zodiac-module-connext), adding it into the safe, and executing transactions after that, all in one [XCall](https://docs.connext.network). By using this Factory, users can conveniently execute transactions with ease and efficiency.
 
-<br />
+It serves as a crucial component in the [Cross-chain Governance Widget](https://github.com/defi-wonderland/crosschain-widget), facilitating the creation of new Safes.
 
-## Features
+## Key Features
 
-<dl>
-  <dt>Sample contracts</dt>
-  <dd>Basic Greeter contract with an external interface.</dd>
+- Create a 1.3.0 `GnosisSafe` contract
+- Deploy a Connext Module
+- Add the module to the `GnosisSafe`
+- Execute transactions seamlessly within the safe
 
-  <dt>Foundry setup</dt>
-  <dd>Foundry configuration with multiple custom profiles and remappings.</dd>
+By leveraging the Connext Module Factory, users can conveniently perform atomic operations, the Factory encapsulates all the complex steps involved eliminating the need for multiple transactions and reducing complexity.
 
-  <dt>Deployment scripts</dt>
-  <dd>Sample scripts to deploy contracts on both mainnet and testnet.</dd>
-
-  <dt>Sample e2e & unit tests</dt>
-  <dd>Example tests showcasing mocking, assertions and configuration for mainnet forking. As well it includes everything needed in order to check code coverage.</dd>
-
-  <dt>Linter</dt>
-  <dd>Simple and fast solidity linting thanks to forge fmt</a>.</dd>
-
-  <dt>Github workflows CI</dt>
-  <dd>Run all tests and see the coverage as you push your changes.</dd>
-</dl>
+---
 
 ## Setup
 
@@ -49,8 +36,6 @@ yarn build:optimized
 ```
 
 ## Running tests
-
-Unit tests should be isolated from any externalities, while E2E usually run in a fork of the blockchain. In this boilerplate you will find example of both.
 
 In order to run both unit and E2E tests, run:
 
@@ -82,10 +67,11 @@ In order to check your current code coverage, run:
 yarn coverage
 ```
 
-> **⚠ WARNING: Forge coverage is having some issues...**  
-> As stated in this [github issue](https://github.com/foundry-rs/foundry/issues/2165), checking the code coverage with Forge when using abstract contract is not currently working.
+In order to create a coverage report, run:
 
-<br>
+```bash
+yarn report
+```
 
 ## Deploy & verify
 
@@ -93,18 +79,36 @@ yarn coverage
 
 Configure the `.env` variables.
 
-### Rinkeby
+### Deploy
+
+To deploy the Factory on different networks, use the following command, replacing `<script name>` with the desired network:
 
 ```bash
-yarn deploy:rinkeby
+yarn deploy:<script name>
 ```
 
-### Mainnet
+List of networks:
 
-```bash
-yarn deploy:mainnet
+| Network  | Script Name |
+| -------- | ----------- |
+| Mainnet  | mainnet     |
+| Goerli   | goerli      |
+| Optimism | optimism    |
+
+The local deployments are stored in ./broadcast
+
+## Repository
+
 ```
-
-The deployments are stored in ./broadcast
-
-See the [Foundry Book for available options](https://book.getfoundry.sh/reference/forge/forge-create.html).
+~~ Structure ~~
+├── solidity: All our contracts and interfaces are here
+│   ├─── contracts/: All the contracts
+│   │    ├─── ConnextModuleFactory.sol : Can setup a new Safe, module and execute transactions from Connext
+│   ├─── interfaces/: The interfaces of all the contracts (SAME STRUCTURE WITH CONTRACTS)
+│   ├─── scripts/: All our scripts to deploy the factory and ConnextModule
+│   ├─── tests/: All our tests for the contracts
+│   │    ├─── e2e/: ...
+│   │    ├─── unit/: ...
+│   │    ├─── mocks/: Mock contracts
+├── README.md
+```
