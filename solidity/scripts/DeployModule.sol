@@ -9,16 +9,10 @@ import {ConnextModuleFactory} from 'contracts/ConnextModuleFactory.sol';
 // This is used to just verify the ConnextModule contract on etherscan for
 // different chains, needed by the Zodiac Safe App to recognise the contract
 
-abstract contract DeployModule is Script {
-  function _deploy() internal {
+contract DeployModule is Script {
+  function run() external {
     vm.startBroadcast();
     new ConnextModule(address(1), address(1), address(1), address(1), uint32(1), address(1));
     vm.stopBroadcast();
-  }
-}
-
-contract DeployModuleGoerli is DeployModule {
-  function run() external {
-    _deploy();
   }
 }
