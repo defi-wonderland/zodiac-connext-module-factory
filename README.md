@@ -89,11 +89,15 @@ yarn deploy:<script name>
 
 List of networks:
 
-| Network  | Script Name |
-| -------- | ----------- |
-| Mainnet  | mainnet     |
-| Goerli   | goerli      |
-| Optimism | optimism    |
+| Network      | Script Name |
+| ------------ | ----------- |
+| Mainnet      | mainnet     |
+| Goerli       | goerli      |
+| Optimism     | optimism    |
+| Polygon      | polygon     |
+| Arbitrum     | arbitrum    |
+| BNB Chain    | bnb         |
+| Gnosis Chain | gnosis      |
 
 The local deployments are stored in ./broadcast
 

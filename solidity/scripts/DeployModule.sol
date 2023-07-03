@@ -10,15 +10,13 @@ import {ConnextModuleFactory} from 'contracts/ConnextModuleFactory.sol';
 // different chains, needed by the Zodiac Safe App to recognise the contract
 
 abstract contract DeployModule is Script {
+  function run() external {
+    _deploy();
+  }
+
   function _deploy() internal {
     vm.startBroadcast();
     new ConnextModule(address(1), address(1), address(1), address(1), uint32(1), address(1));
     vm.stopBroadcast();
-  }
-}
-
-contract DeployModuleGoerli is DeployModule {
-  function run() external {
-    _deploy();
   }
 }
