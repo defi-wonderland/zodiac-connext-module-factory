@@ -34,7 +34,7 @@ jobs:
         run: yarn --frozen-lockfile
         
       - name: Propose
-        run: npx sphinx propose --config ./sphinx/deploy.config.ts --confirm --${{ DEPLOYMENT_TARGET }}
+        run: npx sphinx propose --config ./sphinx/deploy.config.ts --confirm --$DEPLOYMENT_TARGET
         
       - name: Propose
-        run: npx sphinx propose --config ./sphinx/deploy-optimism.config.ts --confirm --${{ DEPLOYMENT_TARGET }}
+        run: npx sphinx propose --config ./sphinx/deploy-optimism.config.ts --confirm --$DEPLOYMENT_TARGET
