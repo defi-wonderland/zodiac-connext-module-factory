@@ -33,8 +33,7 @@ jobs:
       - name: "Create env file"
         run: |
           touch .env
-          echo MAINNET_RPC="${{ secrets.MAINNET_RPC }}" >> .env
-          echo GOERLI_RPC="${{ secrets.GOERLI_RPC }}" >> .env
+          echo ALCHEMY_KEY="${{ secrets.ALCHEMY_KEY }}" >> .env
           cat .env
 
       - name: Run tests
@@ -66,6 +65,7 @@ jobs:
 
       - name: Run tests
         run: yarn test:unit
+
   # coverage:
   #   name: Run Coverage Tests
   #   runs-on: ubuntu-latest
