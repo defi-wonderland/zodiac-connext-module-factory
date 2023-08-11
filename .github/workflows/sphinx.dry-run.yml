@@ -1,0 +1,35 @@
+name: Sphinx Dry Run
+
+# Performs a dryrun proposal when a PR to main is opened and updated to confirm the
+# proposal will complete successfully after a PR is merged
+on: pull_request
+
+jobs:
+  sphinx-dry-run:
+    runs-on: ubuntu-latest
+
+    env:
+      PROPOSER_PRIVATE_KEY: ${{ secrets.PROPOSER_PRIVATE_KEY }}
+      SPHINX_API_KEY: ${{ secrets.SPHINX_API_KEY }}
+      ALCHEMY_KEY: ${{ secrets.ALCHEMY_KEY }}
+      BNB_MAINNET_RPC: ${{ secrets.BNB_MAINNET_RPC }}
+      GNOSIS_MAINNET_RPC: ${{ secrets.GNOSIS_MAINNET_RPC }}
+      BNB_TESTNET_RPC: ${{ secrets.BNB_TESTNET_RPC }}
+      GNOSIS_CHIADO_RPC: ${{ secrets.GNOSIS_CHIADO_RPC }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: nightly
+
+      - name: Install Dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Dry Run
+        run: npx sphinx propose --config ./sphinx/deploy.config.ts --dry-run --testnets
+
+      - name: Dry Run
+        run: npx sphinx propose --config ./sphinx/deploy-optimism.config.ts --dry-run --testnets

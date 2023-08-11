@@ -5,6 +5,8 @@ isolmate/=node_modules/isolmate/src
 @openzeppelin/contracts=node_modules/@openzeppelin/contracts/contracts
 @openzeppelin/contracts-upgradeable=node_modules/@openzeppelin/contracts-upgradeable/contracts
 @gnosis.pm/=node_modules/@gnosis.pm/
+@sphinx-labs/plugins=node_modules/@sphinx-labs/plugins/contracts/foundry/
+@sphinx-labs/contracts=node_modules/@sphinx-labs/contracts/
 
 contracts/=solidity/contracts
 interfaces/=solidity/interfaces

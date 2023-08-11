@@ -22,7 +22,7 @@ contract CommonE2EBase is DSTestFull {
   MockConnextModuleFactory internal _connextModuleFactory;
 
   function setUp() public {
-    vm.createSelectFork(vm.rpcUrl('mainnet'), _FORK_BLOCK);
+    vm.createSelectFork(vm.rpcUrl('ethereum_mainnet'), _FORK_BLOCK);
     vm.prank(_owner);
     _connextModuleFactory = new MockConnextModuleFactory(_safeFactory);
   }
