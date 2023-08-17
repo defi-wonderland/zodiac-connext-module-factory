@@ -105,13 +105,13 @@ The local deployments are stored in ./broadcast
 
 | Network      | Address                                    |
 | ------------ | ------------------------------------------ |
-| Mainnet      | 0xAE76442a5a9E2bf27bb1B2bA4171d1e83Bd0277c |
-| Goerli       | 0xAE76442a5a9E2bf27bb1B2bA4171d1e83Bd0277c |
-| Optimism     | 0xAE76442a5a9E2bf27bb1B2bA4171d1e83Bd0277c |
-| Polygon      | 0xAE76442a5a9E2bf27bb1B2bA4171d1e83Bd0277c |
-| Arbitrum     | 0xAE76442a5a9E2bf27bb1B2bA4171d1e83Bd0277c |
-| BNB Chain    | 0xAE76442a5a9E2bf27bb1B2bA4171d1e83Bd0277c |
-| Gnosis Chain | 0xAE76442a5a9E2bf27bb1B2bA4171d1e83Bd0277c |
+| Mainnet      | 0x614F9Ffe9C7EaA5F5BE877F47217Cf77C3D142d3 |
+| Goerli       | 0x614F9Ffe9C7EaA5F5BE877F47217Cf77C3D142d3 |
+| Optimism     | 0x614F9Ffe9C7EaA5F5BE877F47217Cf77C3D142d3 |
+| Polygon      | 0x614F9Ffe9C7EaA5F5BE877F47217Cf77C3D142d3 |
+| Arbitrum     | 0x614F9Ffe9C7EaA5F5BE877F47217Cf77C3D142d3 |
+| BNB Chain    | 0x614F9Ffe9C7EaA5F5BE877F47217Cf77C3D142d3 |
+| Gnosis Chain | 0x614F9Ffe9C7EaA5F5BE877F47217Cf77C3D142d3 |
 
 ## Repository
 
