@@ -1,5 +1,13 @@
 # Connext Module Factory
 
+> ⚠️ **DEPRECATED – DO NOT USE**
+>
+> This repository is no longer maintained and is **deprecated**.
+>
+> It may contain **outdated, insecure, or vulnerable code** and should **not** be used in production or as a dependency in any project.
+>
+> The repository is retained solely for historical reference. No support, updates, or security patches will be provided.
+
 The `ConnextModuleFactory` is designed to streamline the process of creating a [GnosisSafe 1.3.0](https://github.com/safe-global/safe-contracts/tree/v1.3.0) contract, deploying a [ConnextModule](https://github.com/gnosis/zodiac-module-connext), adding it into the safe, and executing transactions after that, all in one [XCall](https://docs.connext.network). By using this Factory, users can conveniently execute transactions with ease and efficiency.
 
 It serves as a crucial component in the [Cross-chain Governance Widget](https://github.com/defi-wonderland/crosschain-widget), facilitating the creation of new Safes.
